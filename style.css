@@ -1,0 +1,104 @@
+body{
+    background-color: #0B0B12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: "yeuleFont", sans-serif;
+}
+
+/*                                            HEADER / NAVBAR STUFF                                                   */
+
+header{
+    /*We make the header take up the whole width of the page so we can pass that down to navbar ul*/
+    width: 100%;
+}
+
+.navbar {
+    /*Once again make it 100% so the .navbar takes up the entire header*/
+    width: 100%;
+    display: flex;
+
+    /*Makes our items stack vertically*/
+    flex-direction: column;
+    /*Makes our items stack top part of main axis (vert since direction is column)*/
+    justify-content: flex-start;
+    /*Makes our items line up in the middle of cross axis (horz axis since direction is column)*/
+    align-items: center;
+    /*Nav bar color*/
+    background-color: #1A1A33;
+    /*Makes bottom of navbar rounded*/
+    border-radius: 2rem;
+    /*Gives the navbar an outline*/
+    border: 5px solid #2A2A4A;
+}
+
+.navbar ul{
+    /*Makes it so the enitre ul takes up the entire space its given*/
+    width: 50%;
+    /*Removes bullet points*/
+    list-style-type: none;
+
+    /*Makes ul a row*/
+    display: flex;
+    flex-direction: row;
+
+    /*Removes weird padding on left side*/
+    padding-left: 0;
+
+    /*Spaces out three buttons at top*/
+    justify-content: space-evenly;
+    /*Gives buttons that rounded look*/
+    margin-bottom: 1.5rem;
+}
+
+.navbar li{
+
+}
+
+.whiteAndBoring{
+    /*Text style applied to all text I want white*/
+    text-decoration: none;
+    color: #F3F4FF;
+}
+
+.navbar a{
+    /*Add alittle room to sides. L and R are longer*/
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.navbar a:hover{
+    /*When you hover the thingys at the top they are pink/transparent and rounded*/
+    background-color: rgba(255, 111, 177, 0.5);
+    border-radius: 2rem;
+}
+
+.siteName{
+    /*Makes everything in a row and top cenetered*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.siteName img{
+    width: 10%;
+}
+
+/*                                       END OF HEADER / NAVBAR STUFF                                                 */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "yeuleFont";
+    src: url("CinzelDecorative-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
