@@ -1,10 +1,21 @@
 body{
-    background-color: #0B0B12;
+    background: linear-gradient(135deg, #0B0B12, #121225, #1A1A33, #FF4D9D);
     display: flex;
     flex-direction: column;
     align-items: center;
-
     font-family: "yeuleFont", sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*Sets up our custom ttf font*/
+@font-face {
+    font-family: "yeuleFont";
+    src: url("CinzelDecorative-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 /*                                            HEADER / NAVBAR STUFF                                                   */
@@ -30,12 +41,12 @@ header{
     /*Makes bottom of navbar rounded*/
     border-radius: 2rem;
     /*Gives the navbar an outline*/
-    border: 5px solid #2A2A4A;
+    border: 0.5rem solid #2A2A4A;
 }
 
 .navbar ul{
     /*Makes it so the enitre ul takes up the entire space its given*/
-    width: 50%;
+    width: 100%;
     /*Removes bullet points*/
     list-style-type: none;
 
@@ -47,19 +58,24 @@ header{
     padding-left: 0;
 
     /*Spaces out three buttons at top*/
-    justify-content: space-evenly;
+    justify-content: center;
+
+    gap: 3rem;
+
     /*Gives buttons that rounded look*/
     margin-bottom: 1.5rem;
-}
-
-.navbar li{
-
 }
 
 .whiteAndBoring{
     /*Text style applied to all text I want white*/
     text-decoration: none;
     color: #F3F4FF;
+}
+
+.pinkAndInteresting{
+    /*Text style applied to all text I want pink*/
+    text-decoration: none;
+    color: #C63CFF;
 }
 
 .navbar a{
@@ -73,7 +89,7 @@ header{
 
 .navbar a:hover{
     /*When you hover the thingys at the top they are pink/transparent and rounded*/
-    background-color: rgba(255, 111, 177, 0.5);
+    background: linear-gradient(90deg, #FF6FB1, #FF4D9D, #C63CFF);
     border-radius: 2rem;
 }
 
@@ -87,18 +103,92 @@ header{
 
 
 .siteName img{
+    /*Sets cow img sizes*/
     width: 10%;
+}
+
+/*Sets up page header (ex: projects home about txt) to be centered*/
+.pageHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*Makes our page nav bar sticky*/
+.sticky{
+    position: sticky;
+    /*-15% so the middle of the bar sticks and the rest is hidden*/
+    top: -15%;
+    /*Makes sure its always shown*/
+    z-index: 1000;
 }
 
 /*                                       END OF HEADER / NAVBAR STUFF                                                 */
 
-*, *::before, *::after {
-    box-sizing: border-box;
+
+
+/*                                                PROJECTS STUFF                                                      */
+
+/*This is the entire div where all the projects are*/
+.projects{
+    display: flex;
+    flex-direction: row;
+    /*Makes projects wrap so theyre not all crammed on one line*/
+    flex-wrap: wrap;
+    /*Make everything start from the left*/
+    justify-content: center;
+    /*Little breathing room between projects*/
+    gap: 1rem;
 }
 
-@font-face {
-    font-family: "yeuleFont";
-    src: url("CinzelDecorative-Bold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+/*For individual projects*/
+.projectBox{
+    display: flex;
+    /*Sets everything column mode*/
+    flex-direction: column;
+    /*Far left as possible*/
+    align-items: flex-start;
+    /*Set width to 24 instead of 25 because with boarder it doesnt fit*/
+    width: 24%;
+    background-color: #1A1A33;
+    /*Makes bottom of navbar rounded*/
+    border-radius: 2rem;
+    /*Gives the navbar an outline*/
+    border: 0.5rem solid #2A2A4A;
+    /*Breathing room from the side of box*/
+    padding: 1rem;
+    /*Removes underlines from links*/
+    text-decoration: none;
 }
+
+/*Whne you hover the project box itll change bg to gradient*/
+.projectBox:hover{
+    background: linear-gradient(90deg, #FF6FB1, #FF4D9D, #C63CFF);
+    border-radius: 2rem;
+}
+
+/*Makes text close*/
+.projectBox p{
+    padding: 0;
+    margin: 0;
+}
+
+/*Centers photo only*/
+.projectBox img{
+    width: 50%;
+    align-self: center;
+    padding-bottom: 1rem;
+}
+
+/*Makes the line strech the entire length of the box*/
+.projectBox hr{
+    width: 100%;
+    align-self: stretch;
+}
+
+/*Makes the small text small*/
+.smallText{
+    font-size: 0.5rem;
+}
+
+/*                                           END OF PROJECT STUFF                                                     */
