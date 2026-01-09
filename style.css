@@ -279,7 +279,8 @@ footer img{
 .mePic{
     width: 100%;
     grid-area: 1 / 1 / 4 / 4;
-
+    justify-self: center;
+    align-self: center;
     border-radius: 10rem;
 }
 
@@ -298,7 +299,7 @@ footer img{
 .namePlate{
     grid-area: 3 / 1 / 4 / 4;
     justify-self: center;
-    align-self: start;
+    align-self: center;
     margin: 0;
 }
 
@@ -336,4 +337,68 @@ footer img{
 
 .underlined{
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    /* 1) tighten global spacing */
+    .roundBorderAndBG {
+        border-width: 0.25rem;   /* thinner border on small screens */
+        border-radius: 1.25rem;  /* smaller radius */
+    }
+
+    /* 2) Navbar: wrap + smaller gap + smaller padding */
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .navbar a {
+        padding: 0.75rem 1rem;  /* instead of 2rem left/right */
+    }
+
+    /* 3) Home container should be wider on mobile */
+    .homePageAboutMe {
+        width: 95%;
+        grid-template-columns: 1fr; /* single column */
+        grid-template-rows: auto;
+    }
+
+    /* 4) Kill the grid-area “desktop layout” on mobile so it flows naturally */
+    .pictures,
+    .textAboutMe,
+    .featuredLine,
+    .featuredTxt,
+    .featuredProj1,
+    .featuredProj2,
+    .featuredProj3 {
+        grid-area: auto;
+    }
+
+    /* 5) Featured cards: stack */
+    .featuredProj1,
+    .featuredProj2,
+    .featuredProj3 {
+        width: 100%;
+    }
+
+    /* 6) Name text: don’t let it explode */
+    .bigText {
+        font-size: 5rem;
+    }
+
+    .sticky { top: -13%; }
+}
+
+@media (max-width: 768px) {
+    .projects{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 95%;
+    }
+
+    .projectBox{
+        width: 100%; /* override the desktop 24% */
+    }
 }
